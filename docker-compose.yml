@@ -1,0 +1,12 @@
+
+services:
+  moodtracker:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: moodtracker-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
